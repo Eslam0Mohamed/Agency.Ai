@@ -3,19 +3,19 @@ import assets from '../assets/assets'
 import ThemeToggleBtn from './ThemeToggleBtn'
 
 const Navbar = ({ theme, setTheme }) => {
-const [sidebarOpened,setSidebarOpened] = useState(true)
+const [sidebarOpened,setSidebarOpened] = useState(false)
 
     return (
-        <div className='flex justify-between items-center px-4 py-4 sm:px-12 lg:px-24 xl:px-40
-    sticky top-0 backdrop-blur-2xl font-medium bg-white/50 dark:bg-gray-900/70 '>
+        <div className='flex justify-between items-center px-4 py-4 sm:px-12 lg:px-24 xl:px-40 z-20
+    sticky top-0 backdrop-blur-2xl font-medium bg-white/50 dark:bg-gray-900/70  '>
             <img src={theme == "dark" ? assets.logo_dark : assets.logo}
                 alt="agency.ai logo" className='w-32 sm:w-40' />
 
 
             <div className={`flex gap-6 text-gray-700 dark:text-white sm:text-sm 
-            ${sidebarOpened? 'max-sm:w-60 max-sm:pl-10':"max-sm:w-0 overflow-hidden"}  max-sm:fixed max-sm:top-0 max-sm:right-0
+            ${sidebarOpened? 'max-sm:w-60 max-sm:pl-10':"max-sm:w-0 overflow-hidden"}  max-sm:fixed max-sm:top-0 max-sm:right-0 transition-all
             max-sm:min-h-screen max-sm:bg-primary max-sm:text-white 
-            max-sm:flex-col max-sm:pt-20 transition-all`}>
+            max-sm:flex-col max-sm:pt-20 `}>
 
              <img src={assets.close_icon} alt="close sidebar"
              className={`${sidebarOpened?"block":"hidden"} w-10 sm:hidden absolute top-4 right-4 cursor-pointer`}
