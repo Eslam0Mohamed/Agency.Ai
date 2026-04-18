@@ -14,7 +14,7 @@ const ThemeToggleBtn = ({theme,setTheme}) => {
     },[theme])
   return (
     <div>
-      <button className='p-2'>
+      <button className='p-2 mr-12'>
 {theme=="dark"?(
     <img src={assets.sun_icon} alt="light mode icon"
      className='size-8.5 p-2 border border-gray-500 rounded-full cursor-pointer'

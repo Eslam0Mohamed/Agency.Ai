@@ -26,11 +26,11 @@ const [sidebarOpened,setSidebarOpened] = useState(false)
                 <a onClick={()=>{setSidebarOpened(false)}} href="#our-work" className='hover:border-b'>Our Work</a>
                 <a onClick={()=>{setSidebarOpened(false)}} href="#cotact-us" className='hover:border-b'>Contact Us</a>
             </div>
-                <ThemeToggleBtn theme={theme} setTheme={setTheme} / >
             <div className='flex gap-2 items-center sm:gap-4'>
+                <ThemeToggleBtn theme={theme} setTheme={setTheme} / >
 
-             <img src={theme=="dark"?assets.menu_icon_dark:assets.menu_icon} alt="open sidebar" 
-             className={`${sidebarOpened?"hidden":"block"} w-10 sm:hidden absolute top-4 right-4 cursor-pointer`}
+             <img  src={theme=="dark"?assets.menu_icon_dark:assets.menu_icon} alt="open sidebar" 
+             className={`${sidebarOpened?"hidden":"block"}  w-10 sm:hidden absolute top-4 right-4 cursor-pointer`}
              onClick={()=>{setSidebarOpened(true)}} />
 
                 <a href="#contact-us" className='max-sm:hidden cursor-pointer text-sm hover:scale-105 
