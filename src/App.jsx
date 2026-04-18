@@ -4,6 +4,7 @@ import Hero from './compnents/Hero';
 import TrustedBy from './compnents/TrustedBy';
 import Services from './compnents/Services';
 import OurLatesetWork from './compnents/OurLatesetWork';
+import Team from './compnents/Team';
 
 function App() {
 const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
@@ -14,6 +15,7 @@ const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
      <TrustedBy/>
      <Services/>
      <OurLatesetWork/>
+     <Team/>
     </div>
   )
 }
