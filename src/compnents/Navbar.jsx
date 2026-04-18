@@ -7,7 +7,7 @@ const [sidebarOpened,setSidebarOpened] = useState(false)
 
     return (
         <div className='flex justify-between items-center px-4 py-4 sm:px-12 lg:px-24 xl:px-40 z-20
-    sticky top-0 backdrop-blur-2xl font-medium bg-white/50 dark:bg-gray-900/70  '>
+    sticky top-0 backdrop-blur-xl font-medium bg-white/50 dark:bg-gray-900/70  '>
             <img src={theme == "dark" ? assets.logo_dark : assets.logo}
                 alt="agency.ai logo" className='w-32 sm:w-40' />
 
@@ -26,9 +26,9 @@ const [sidebarOpened,setSidebarOpened] = useState(false)
                 <a onClick={()=>{setSidebarOpened(false)}} href="#our-work" className='hover:border-b'>Our Work</a>
                 <a onClick={()=>{setSidebarOpened(false)}} href="#cotact-us" className='hover:border-b'>Contact Us</a>
             </div>
+                <ThemeToggleBtn theme={theme} setTheme={setTheme} / >
             <div className='flex gap-2 items-center sm:gap-4'>
 
-                <ThemeToggleBtn theme={theme} setTheme={setTheme} / >
              <img src={theme=="dark"?assets.menu_icon_dark:assets.menu_icon} alt="open sidebar" 
              className={`${sidebarOpened?"hidden":"block"} w-10 sm:hidden absolute top-4 right-4 cursor-pointer`}
              onClick={()=>{setSidebarOpened(true)}} />
