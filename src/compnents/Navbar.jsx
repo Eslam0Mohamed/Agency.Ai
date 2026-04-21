@@ -24,7 +24,7 @@ const [sidebarOpened,setSidebarOpened] = useState(false)
                 <a onClick={()=>{setSidebarOpened(false)}} href="#" className='hover:border-b'>Home</a>
                 <a onClick={()=>{setSidebarOpened(false)}} href="#services" className='hover:border-b'>Services</a>
                 <a onClick={()=>{setSidebarOpened(false)}} href="#our-work" className='hover:border-b'>Our Work</a>
-                <a onClick={()=>{setSidebarOpened(false)}} href="#cotact-us" className='hover:border-b'>Contact Us</a>
+                <a onClick={()=>{setSidebarOpened(false)}} href="#contact-us" className='hover:border-b'>Contact Us</a>
             </div>
             <div className='flex gap-2 items-center sm:gap-4'>
                 <ThemeToggleBtn theme={theme} setTheme={setTheme} / >

@@ -7,6 +7,7 @@ import OurLatesetWork from './compnents/OurLatesetWork';
 import Team from './compnents/Team';
 import ContactUs from './compnents/ContactUs';
 import { Toaster } from 'react-hot-toast';
+import Footer from './compnents/Footer';
 function App() {
 const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
   return (
@@ -19,6 +20,7 @@ const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
      <OurLatesetWork/>
      <Team/>
      <ContactUs/>
+     <Footer theme={theme}></Footer>
     </div>
   )
 }
