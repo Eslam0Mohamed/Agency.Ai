@@ -1,25 +1,39 @@
 import React from 'react'
 import { teamData } from '../assets/assets'
 import Title from './Title'
+import { motion } from 'motion/react'
+import { easeOut } from 'motion'
+
 const Team = () => {
     return (
-        <div className='team mx-auto text-gray-800 dark:text-white px-4 sm:px-12 lg:px-24 xl:px-40 pt-20'>
+        <motion.div
+            initial="hidden"
+            whileInView="visible"
+            transition={{ duration: 0.5, ease: easeOut }}
+            viewport={{ once: true }}
+            className='team mx-auto text-gray-800 dark:text-white px-4 sm:px-12 lg:px-24 xl:px-40 pt-20'>
             <Title title={"Meet our team"}
                 desc={"A passionate team of digital experts dedicated to your brands success."} />
-            <div className='grid grid-cols-2 md:grid-3 xl:grid-cols-4 gap-6'>
+            <div
+                className='grid grid-cols-2 md:grid-3 xl:grid-cols-4 gap-6'>
                 {teamData.map((team, index) => {
-                     return  <div key={index} className='flex max-sm:flex-col items-center p-5 gap-5 rounded-xl border border-gray-100 dark:border-gray-700 bg-white
+                    return <motion.div 
+                    initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay:index*0.2}}
+                viewport={{ once: true }}
+                    key={index} className='flex max-sm:flex-col items-center p-5 gap-5 rounded-xl border border-gray-100 dark:border-gray-700 bg-white
              dark:bg-gray-900 shadow-gray-100 dark:shadow-white 
               shadow hover:scale-105 transition-all duration-300'>
                         <img src={team.image} alt={team.name} className='w-12 h-12 rounded-full' />
                         <div className="">
-                            <h2 className='font-bold text-md'>{team.name }</h2>
+                            <h2 className='font-bold text-md'>{team.name}</h2>
                             <p>{team.title}</p>
-                        </div> 
-                  </div>
+                        </div>
+                    </motion.div>
                 })}
             </div>
-        </div>
+        </motion.div>
     )
 }
 

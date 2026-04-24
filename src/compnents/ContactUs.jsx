@@ -2,6 +2,8 @@ import React from 'react'
 import assets from "../assets/assets"
 import Title from "./Title"
 import toast from 'react-hot-toast';
+import { motion } from 'motion/react'
+
 function ContactUs() {
 
     const [result, setResult] = React.useState("");
@@ -31,9 +33,19 @@ function ContactUs() {
         }
     }
     return (
-        <div className='flex flex-col items-center text-gray-800 dark:text-white px-4 sm:px-12 lg:px-24 xl:px-40 py-20'>
+        <motion.div
+            initial="hidden"
+            whileInView="visible"
+            transition={{ staggerChildren: 0.2 }}
+            viewport={{ once: true }}
+            id='contact' className='flex flex-col items-center text-gray-800 dark:text-white px-4 sm:px-12 lg:px-24 xl:px-40 py-20'>
             <Title title={"Reach out to us"} desc={"You can connect with us through this form"} />
-            <form onSubmit={onSubmit} className='grid sm:grid-cols-2 gap-3 sm:gap-5 max-w-2xl w-full'>
+            <motion.form
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                viewport={{ once: true }}
+                onSubmit={onSubmit} className='grid sm:grid-cols-2 gap-3 sm:gap-5 max-w-2xl w-full'>
                 <div>
                     <label htmlFor="" className=' text-sm font-medium'>Your Name</label>
                     <div className='mt-2 flex items-center rounded-lg border pl-3  border-gray-300 dark:border-gray-600 w-full'>
@@ -59,9 +71,9 @@ function ContactUs() {
                  text-white text-sm rounded-full cursor-pointer hover:scale-105 transition-all'>Submit
                     <img src={assets.arrow_icon} alt="submit data" />
                 </button>
-            </form>
+            </motion.form>
             <span>{result}</span>
-        </div>
+        </motion.div>
     )
 }
 
